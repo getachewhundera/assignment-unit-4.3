@@ -8,13 +8,13 @@ console.log('***** Cart Functions *****');
 // - Create a global variable named `basket` and set it to an empty array.
 
 let basket= [];
-
+const maxItems= 5;
 
 // - Create a function called `addItem`. It should:
 //   - take an input parameter for a string `item`
 //   - add the new item to the global array `basket`. 
 //   - return `true` indicating the item was added
-// const maxItems= 5;
+
 
 
 function addItem(item) {
@@ -26,10 +26,10 @@ console.log(addItem("apple"));
 
 
 
-addItem("apples");
 addItem("pears");
 addItem("oranges");
 addItem("bannana");
+
 
 
 // - Create a function called `listItems`. It should:
@@ -82,15 +82,18 @@ empty();
 // 2. Create a function called isFull(). It should:
 //   - return `false` if the basket contains *less* than max number of items
 //   - return `true` otherwise (equal or more than maxItems)
-// function isFull(){
-//     if (basket.length < maxItems){
-//         return false; 
-//     }else if(basket.length >= maxItems){
-//         return true; 
-//     }else {
-    //console.log("something went wrong");
-//}
-// }
+
+function isFull(result){
+    if (basket.length < maxItems) {
+        return false; 
+    }else if (basket.length >= maxItems){
+        return true; 
+}
+}
+isFull();
+console.log(isFull());
+
+
 // 3. Update the required `addItem` function to:
 //   - Use the `isFull` function to prevent more than `maxItems` from being added to the basket. 
 //   - If an item was added to the array, return `true`
@@ -151,20 +154,16 @@ empty();
 
 // DO NOT MODIFY
 // Used for automated testing
-
-
-
-
-// try {
-//     module.exports = {
-//         basket: typeof basket !== 'undefined' ? basket : undefined,
-//         addItem: typeof addItem !== 'undefined' ? addItem : undefined,
-//         listItems: typeof listItems !== 'undefined' ? listItems : undefined,
-//         maxItems: typeof maxItems !== 'undefined' ? maxItems : undefined,
-//         empty: typeof empty !== 'undefined' ? empty : undefined,
-//         isFull: typeof isFull !== 'undefined' ? isFull : undefined,
-//         removeItem: typeof removeItem !== 'undefined' ? removeItem : undefined,
-//     };
-// } catch(e) {
-//     // Do nothing
-// }
+try {
+    module.exports = {
+        basket: typeof basket !== 'undefined' ? basket : undefined,
+        addItem: typeof addItem !== 'undefined' ? addItem : undefined,
+        listItems: typeof listItems !== 'undefined' ? listItems : undefined,
+        maxItems: typeof maxItems !== 'undefined' ? maxItems : undefined,
+        empty: typeof empty !== 'undefined' ? empty : undefined,
+        isFull: typeof isFull !== 'undefined' ? isFull : undefined,
+        removeItem: typeof removeItem !== 'undefined' ? removeItem : undefined,
+    };
+} catch(e) {
+    // Do nothing
+}
